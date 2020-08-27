@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"module": "CommonJS",
+		// Target latest version of ECMAScript.
+		"target": "esnext",
+		// Search under node_modules for non-relative imports.
+		"moduleResolution": "node",
+		// Enable strictest settings like strictNullChecks & noImplicitAny.
+		"strict": true,
+		"sourceMap": true,
+		"incremental": true,
+		"outDir": "dist"
+	},
+	"include": [
+		"src"
+	]
+}

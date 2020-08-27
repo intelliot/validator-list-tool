@@ -1,0 +1,59 @@
+{
+  "name": "validator-list-parser",
+  "version": "0.0.1",
+  "description": "Load and parse a validator list",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "start": "node dist/index.js",
+    "clean": "rm -r dist || true",
+    "test": "npm run lint && npm run clean && npm run build && mocha",
+    "unit": "npm run build && mocha",
+    "coverage": "npm run build && nyc mocha",
+    "lint": "eslint ./ --ext .js,.ts"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "lcov",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.5.7",
+    "node-fetch": "^2.6.0",
+    "ripple-address-codec": "^4.1.1",
+    "ripple-binary-codec": "^0.2.7",
+    "ripple-lib": "1.2.4",
+    "source-map-support": "^0.5.12"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/sinon": "^7.0.12",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "chai": "^4.2.0",
+    "concurrently": "^5.3.0",
+    "eslint": "^5.16.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.0",
+    "nyc": "^14.1.1",
+    "sinon": "^7.3.2",
+    "ts-node": "^8.2.0",
+    "tsc-watch": "^4.2.9",
+    "typescript": "^4.0.2"
+  }
+}
